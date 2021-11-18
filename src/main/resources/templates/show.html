@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Added at</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${studentList.empty}">
+        <td colspan="2">No students found</td>
+    </tr>
+
+    <tr th:each="student : ${studentList}">
+        <td>
+            <span th:text="${student.name}">Name</span>
+        </td>
+        <td>
+            <span th:text="${student.creationTime}">Added at</span>
+        </td>
+    </tr>
+    </tbody>
+
+
+</table>
+
+</body>
+</html>
